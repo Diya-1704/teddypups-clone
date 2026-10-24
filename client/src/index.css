@@ -1,0 +1,98 @@
+/* Import Premium Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#faf5ec] text-[#2b1d14] font-sans antialiased overflow-x-hidden;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* ---------- Buttons ---------- */
+  .btn-primary {
+    @apply bg-[#c85a17] text-white px-8 py-3 rounded-full font-medium hover:bg-[#a34711] transition-colors duration-200 shadow-md;
+  }
+  .btn-outline {
+    @apply border-2 border-[#2b1d14] text-[#2b1d14] px-8 py-3 rounded-full font-medium hover:bg-[#2b1d14] hover:text-white transition-colors duration-200;
+  }
+  .btn-whatsapp {
+    @apply bg-[#1f7a4d] text-white px-6 py-3 rounded-full font-medium hover:bg-[#155c38] transition-colors duration-200;
+  }
+
+  /* ---------- Layout ---------- */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ---------- Shapes & Decorations ---------- */
+  
+  /* The Wavy Scalloped edge used at the bottom of the Hero and Top of Gone Home */
+  .scallop-bottom {
+    background-image: radial-gradient(circle at 50% 100%, transparent 20px, #faf5ec 21px);
+    background-size: 40px 40px;
+    background-position: bottom center;
+  }
+
+  /* The Arch shape for hero images */
+  .arch-image {
+    border-radius: 999px 999px 0 0;
+    object-fit: cover;
+  }
+
+  /* The Hand-drawn organic shape for puppy listings */
+  .puppy-blob {
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    border: 3px solid #2b1d14;
+    box-shadow: 4px 4px 0px #2b1d14;
+    transition: transform 0.3s ease;
+  }
+  .puppy-blob:hover {
+    transform: scale(1.05) rotate(2deg);
+  }
+
+  /* The Wavy Underline for the Puppies Page Header */
+  .wavy-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .wavy-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 7.5 Q 25 0, 50 7.5 T 100 7.5' fill='none' stroke='%23c85a17' stroke-width='4'/%3E%3C/svg%3E");
+    background-size: 100px 15px;
+    background-repeat: repeat-x;
+  }
+
+  /* The Masking Tape effect for the Filter Box */
+  .tape-box {
+    position: relative;
+    background: white;
+    border: 2px solid #2b1d14;
+    border-radius: 16px;
+  }
+  .tape-box::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 40px;
+    width: 80px;
+    height: 25px;
+    background: rgba(212, 163, 115, 0.6);
+    transform: rotate(-3deg);
+    z-index: 10;
+  }
+}
